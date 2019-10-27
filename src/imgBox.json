@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "image": "../dist/images/1.jpg"
+    },
+    {
+        "id": 2,
+        "image": "../dist/images/images.jpg"
+
+    },
+    {
+        "id": 3,
+        "image": "../dist/images/vaporwave.jpg"
+    }
+]
