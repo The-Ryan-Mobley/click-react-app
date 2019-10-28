@@ -11,11 +11,28 @@ class App extends Component {
   };
  
   remove = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const imgBox = this.state.imgBox.filter(image => image.id !== id);
-    // Set this.state.friends equal to the new friends array
+    
+    //const imgBox = this.state.imgBox.filter(image => image.id !== id);
+    const imgBox = this.shuffleArr(this.state.imgBox);
+    //needs to randomly append elements
+    
     this.setState({ imgBox });
   };
+  shuffleArr = arr =>{
+    let currentIndex = arr.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = arr[currentIndex];
+      arr[currentIndex] = arr[randomIndex];
+      arr[randomIndex] = temporaryValue;
+    }
+    return arr;
+  
+  }
   render(){
   return (
     <div className="App container">
@@ -26,7 +43,6 @@ class App extends Component {
             remove={this.remove}
             id={ib.id}
             img={ib.image}
-            
           />
         ))}
 

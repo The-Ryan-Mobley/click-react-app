@@ -1,15 +1,18 @@
 [
     {
         "id": 1,
-        "image": "images/1.jpg"
+        "image": "images/1.jpg",
+        "clicked": false
     },
     {
         "id": 2,
-        "image": "images/images.jpg"
+        "image": "images/images.jpg",
+        "clicked": false
 
     },
     {
         "id": 3,
-        "image": "images/vaporwave.jpg"
+        "image": "images/vaporwave.jpg",
+        "clicked": false
     }
 ]
