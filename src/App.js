@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import Character from './components/Character';
 import imgBox from "./imgBox.json";
 import Score from './components/Score';
+import Heading from './components/Heading';
 import './App.css';
 
 class App extends Component {
@@ -10,7 +10,8 @@ class App extends Component {
   state = {
    imgBox,
    clickedList: [],
-   scoreCount: 0
+   scoreCount: 0,
+   feedBack: "Select an Image!"
   };
   
   cycle = id => { //shuffles the array and sets clicked to true
@@ -29,17 +30,18 @@ class App extends Component {
     console.table(this.state);
     if(this.state.clickedList.indexOf(id) === -1){
       let scoreCount = this.state.scoreCount;
-      scoreCount++;
-      this.setState({scoreCount});
+      scoreCount += 1 * (this.state.clickedList.length + 1);
+      let feedBack = "Great!";
+      this.setState({scoreCount, feedBack});
       
     } else {
       let clickedList = [];
-      let scoreCount = 0;
-      this.setState({clickedList, scoreCount});
+      let scoreCount = this.state.scoreCount - (2 * (this.state.clickedList.length + 1));
+      let feedBack = "Fail!";
+      this.setState({clickedList, scoreCount, feedBack});
     }
   }
   clickLogic = id =>{
-    console.log("hello");
     this.scoreUp(id);
     this.cycle(id);
     
@@ -62,22 +64,24 @@ class App extends Component {
   }
   render(){
   return (
-    <div className="App container">
-      <Score score={this.state.scoreCount}/>
-      <div className="row">
-        <div className="twelve columns">
-        {this.state.imgBox.map(ib => (
-          <Character
-            key={ib.id}
-            clickLogic={this.clickLogic}
-            id={ib.id}
-            img={ib.image}
-          />
-        ))}
+    <div className="App">
+      <Heading />
+        <div className="container">
+          <Score score={this.state.scoreCount} feedBack={this.state.feedBack}/>
+          <div className="row">
+            <div className="twelve columns content">
+            {this.state.imgBox.map(ib => (
+            <Character
+              key={ib.id}
+              clickLogic={this.clickLogic}
+              id={ib.id}
+              img={ib.image}
+            />
+            ))}
 
+            </div>
         </div>
       </div>
-      
     </div>
   );
   }

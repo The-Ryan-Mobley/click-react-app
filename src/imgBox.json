@@ -14,5 +14,50 @@
         "id": 3,
         "image": "images/vaporwave.jpg",
         "clicked": false
+    },
+    {
+        "id": 4,
+        "image": "images/915500_1.jpg",
+        "clicked": false
+    },
+    {
+        "id": 5,
+        "image": "images/915512_1.jpg",
+        "clicked": false
+    },
+    {
+        "id": 6,
+        "image": "images/915516_1.jpg",
+        "clicked": false
+    },
+    {
+        "id": 7,
+        "image": "images/5a7d4ad133248be80a7bbaec52c22ff4_ef29fc4d47744416fd19ad893cc78838.jpg",
+        "clicked": false
+    },
+    {
+        "id": 8,
+        "image": "images/abstract-background-of-glowing-geometric-shapes-vladystock.jpg",
+        "clicked": false
+    },
+    {
+        "id": 9,
+        "image": "images/bc0b6d4473a66f4391d0f470bd1105df.jpg",
+        "clicked": false
+    },
+    {
+        "id": 10,
+        "image": "images/D1869_12_042_0004_600.jpg",
+        "clicked": false
+    },
+    {
+        "id": 11,
+        "image": "images/thumb2-cubes-3d-art-geometric-shapes-voxel-neon.jpg",
+        "clicked": false
+    },
+    {
+        "id": 12,
+        "image": "images/thumb2-geometric-abstraction-triangles-blue-neon-illumination-geometric-shapes-pattern.jpg",
+        "clicked": false
     }
 ]

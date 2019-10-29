@@ -1,6 +1,9 @@
 
+.character{
+    padding: 1%;
+    margin-left: 0;
+}
 .thumbnail{
-    margin: 1%;
     width: 100%;
-    height: 100%;
+
 }
