@@ -1,7 +1,15 @@
 .heading{
-    width: 102%;
-    margin: 0 -1% 0 -1%;
+    text-align: justify;
+    font-family: 'Audiowide', cursive;
+    width: 100%;
     background-color: steelblue;
-    padding: 3%;
+    padding: 0 2% 3% 2%;
+}
+.container{
+    flex: 1 0 auto;
 
+}
+footer{
+    margin-top: 3%;
+    flex-shrink: 0;
 }

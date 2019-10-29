@@ -65,8 +65,7 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-      <Heading />
-        <div className="container">
+      <Heading>
           <Score score={this.state.scoreCount} feedBack={this.state.feedBack}/>
           <div className="row">
             <div className="twelve columns content">
@@ -81,7 +80,7 @@ class App extends Component {
 
             </div>
         </div>
-      </div>
+      </Heading>
     </div>
   );
   }

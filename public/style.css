@@ -1,5 +1,23 @@
+
 html{
-    background-color: #b1b1e6;
+    overflow-x: hidden;
+    background-color: #ffd922;
+    background: -webkit-linear-gradient(23deg, #ffd922 0%, #f9552a 18%, #702e8d 71%, #2e2472 100%);
+    background: -moz-linear-gradient(23deg, #ffd922 0%, #f9552a 18%, #702e8d 71%, #2e2472 100%);
+    background: -o-linear-gradient(23deg, #ffd922 0%, #f9552a 18%, #702e8d 71%, #2e2472 100%);
+    background: linear-gradient(23deg, #ffd922 0%, #f9552a 18%, #702e8d 71%, #2e2472 100%);
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+
+}
+html,body{
+    height: 100%;
+}
+.body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .container{
     border-color: red;

@@ -1,7 +1,11 @@
 
 .character{
+    margin: 1%;
     padding: 1%;
     margin-left: 0;
+    background-color: #000000;
+    box-shadow: 5px 10px #00000060;
+
 }
 .thumbnail{
     width: 100%;
