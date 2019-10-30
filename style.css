@@ -1,0 +1,54 @@
+
+html{
+    overflow-x: hidden;
+    background-color: #ffd922;
+    background: repeating-linear-gradient(23deg, #ffd922 0%, #f9552a 18%, #702e8d 71%, #2e2472 100%);
+    background-size: 300% 300%;;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+    animation: AnimationName 25s ease infinite;
+    background-position-x:0%;
+    
+}
+html::after{
+    content: "";
+    background-image: url("/images/paper_1.png");
+    animation: grain 8s steps(10) infinite;
+    height: 300%;
+    width: 300%;
+    opacity: 0.4;
+    position: fixed;
+    left: -50%;
+    top: -100%;
+    z-index: 1;
+}
+html,body{
+    height: 100%;
+}
+.body{
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    max-width: 100%;
+}
+@keyframes grain {
+    0%, 100% { transform:translate(0, 0) }
+    10% { transform:translate(-5%, -10%) }
+    20% { transform:translate(-15%, 5%) }
+    30% { transform:translate(7%, -25%) }
+    40% { transform:translate(-5%, 25%) }
+    50% { transform:translate(-15%, 10%) }
+    60% { transform:translate(15%, 0%) }
+    70% { transform:translate(0%, 15%) }
+    80% { transform:translate(3%, 35%) }
+    90% { transform:translate(-10%, 10%) }
+  }
+@keyframes AnimationName {
+    0%{background-position:0% 99%}
+    50%{background-position:100% 2%}
+    100%{background-position:0% 99%}
+}
