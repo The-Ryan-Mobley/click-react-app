@@ -1,4 +1,22 @@
 .centered{
     text-align: center;
     font-family: 'Audiowide', cursive;
+
+}
+.scoreTag{
+    position: relative;
+    z-index: 2;
+
+}
+.correct{
+    color: #00ff00;
+
+}
+.wrong{
+    color: #ff0000;
+}
+@media(min-width: 320px) and (max-width: 549px){
+    .scoreTag{
+        font-size: 3rem;
+    }
 }

@@ -11,7 +11,8 @@ class App extends Component {
    imgBox,
    clickedList: [],
    scoreCount: 0,
-   feedBack: "Select an Image!"
+   feedBack: "Select an Image!",
+   correct: true
   };
   
   cycle = id => { //shuffles the array and sets clicked to true
@@ -26,20 +27,23 @@ class App extends Component {
     this.setState({ imgBox });
   };
   scoreUp = id => {
-    console.log("line 28");
-    console.table(this.state);
     if(this.state.clickedList.indexOf(id) === -1){
       let scoreCount = this.state.scoreCount;
       scoreCount += 1 * (this.state.clickedList.length + 1);
       let feedBack = "Great!";
-      this.setState({scoreCount, feedBack});
+      this.setState({scoreCount, feedBack, correct: true});
       
     } else {
       let clickedList = [];
       let scoreCount = this.state.scoreCount - (2 * (this.state.clickedList.length + 1));
       let feedBack = "Fail!";
-      this.setState({clickedList, scoreCount, feedBack});
+      this.setState({clickedList, scoreCount, feedBack, correct: false});
     }
+    if(this.state.clickedList.length > 6){
+      let clickedList = [];
+      this.setState({clickedList});
+    }
+    console.table(this.state.correct);
   }
   clickLogic = id =>{
     this.scoreUp(id);
@@ -63,10 +67,13 @@ class App extends Component {
   
   }
   render(){
+    let checkClass = "";
+    this.state.correct ? checkClass = "correct" : checkClass = "wrong";
+    console.log(checkClass);
   return (
     <div className="App">
       <Heading>
-          <Score score={this.state.scoreCount} feedBack={this.state.feedBack}/>
+          <Score score={this.state.scoreCount} feedBack={this.state.feedBack} checkClass={checkClass}/>
           <div className="row">
             <div className="twelve columns content">
             {this.state.imgBox.map(ib => (
@@ -75,6 +82,7 @@ class App extends Component {
               clickLogic={this.clickLogic}
               id={ib.id}
               img={ib.image}
+              checkClass={checkClass}
             />
             ))}
 
