@@ -18,7 +18,7 @@ class App extends Component {
   cycle = id => { //shuffles the array and sets clicked to true
      let imgBox = this.shuffleArr(this.state.imgBox);
 
-     imgBox.map(i => { 
+     imgBox.forEach(i => { 
         if(i.id === id){
           i.clicked = true;
           this.state.clickedList.push(id);
